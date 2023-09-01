@@ -8,7 +8,7 @@ using WinRT.Interop;
 
 namespace Installer
 {
-    public partial class WhereInstall : Page
+    public partial class InstallOption : Page
     {
         MainWindow mainWindow = null!;
 
@@ -19,10 +19,10 @@ namespace Installer
             base.OnNavigatedTo(e);
         }
 
-        public WhereInstall()
+        public InstallOption()
         {
             InitializeComponent();
-            InstallDir.Text = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\MyApp";
+            // InstallDir.Text = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\MyApp";
         }
 
         void NextInstall(object sender, RoutedEventArgs e)
@@ -32,23 +32,16 @@ namespace Installer
 
         void BackInstall(object sender, RoutedEventArgs e)
         {
-            mainWindow.MainFrame.Navigate(typeof(Agreement), mainWindow);
-        }
-
-        async void OpenInstallDir(object sender, RoutedEventArgs e)
-        {
-            IntPtr hWnd = WinRT.Interop.WindowNative.GetWindowHandle(mainWindow);
-            FolderPicker picker = new Windows.Storage.Pickers.FolderPicker();
-            WinRT.Interop.InitializeWithWindow.Initialize(picker, hWnd);
-            picker.SuggestedStartLocation = PickerLocationId.ComputerFolder;
-            picker.FileTypeFilter.Add("*");
-            StorageFolder folder = await picker.PickSingleFolderAsync();
-            InstallDir.Text = folder.Path;
+            mainWindow.MainFrame.Navigate(typeof(WhereInstall), mainWindow);
         }
 
         void Close(object sender, RoutedEventArgs e)
         {
             mainWindow.Close();
+        }
+
+        void CreateShortcutCheck(object sender, RoutedEventArgs e){
+            mainWindow.createShortcut = (bool)CreateShortcut.IsChecked!;
         }
     }
 }

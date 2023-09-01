@@ -15,6 +15,11 @@ namespace Installer
             base.OnNavigatedTo(e);
         }
 
+        void Close(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Close();
+        }
+
         public Agreement()
         {
             InitializeComponent();

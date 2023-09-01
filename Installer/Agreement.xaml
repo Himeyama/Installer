@@ -25,8 +25,9 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="Next >" x:Uid="Next"
                         IsEnabled="{Binding ElementName=Accept, Path=IsChecked}"
-                        Click="NextWhereInstall" />
-                    <Button Content="Cancel" Margin="8, 0, 0, 0" x:Uid="Cancel" />
+                        Click="NextWhereInstall"
+                        Style="{StaticResource AccentButtonStyle}" />
+                    <Button Content="Cancel" Margin="8, 0, 0, 0" x:Uid="Cancel" Click="Close" />
                 </StackPanel>
             </StackPanel>
         </Grid>

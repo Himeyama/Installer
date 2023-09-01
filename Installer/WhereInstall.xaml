@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Page
     x:Class="Installer.WhereInstall"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -13,11 +13,18 @@
                 <TextBlock x:Uid="SelectDestLocation" FontSize="24" />
                 <TextBlock x:Uid="WhereAppInstall" TextWrapping="Wrap" />
             </StackPanel>
-            <StackPanel Grid.Row="1"></StackPanel>
+            <StackPanel Grid.Row="1">
+                <Grid ColumnDefinitions="*, Auto" Margin="0, 16, 0, 0">
+                    <TextBox Grid.Column="0" x:Name="InstallDir" />
+                    <Button Grid.Column="1" Content="Open" x:Uid="OpenButton" Margin="8, 0, 0, 0" Click="OpenInstallDir" />
+                </Grid>
+
+            </StackPanel>
             <StackPanel Grid.Row="2" Margin="0, 16, 0, 0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Content="Next >" x:Uid="Next" Click="NextInstall" />
-                    <Button Content="Cancel" Margin="8, 0, 0, 0" x:Uid="Cancel" />
+                    <Button Content="&lt; Back" x:Uid="Back" Click="BackInstall" />
+                    <Button Content="Next &gt;" Style="{StaticResource AccentButtonStyle}" Margin="8, 0, 0, 0" x:Uid="Next" Click="NextInstall" />
+                    <Button Content="Cancel" Margin="8, 0, 0, 0" x:Uid="Cancel" Click="Close" />
                 </StackPanel>
             </StackPanel>
         </Grid>

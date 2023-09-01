@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Page
+    x:Class="Installer.InstallOption"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Installer"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Content>
+        <Grid Margin="16, 8, 16, 16" RowDefinitions="Auto, *, Auto">
+            <StackPanel>
+                <CheckBox Content="Create a application shortcut in Desktop"
+                    Checked="CreateShortcutCheck"
+                    Unchecked="CreateShortcutCheck"
+                    x:Uid="CreateShortcut"
+                    x:Name="CreateShortcut"
+                    IsChecked="False" />
+            </StackPanel>
+        </Grid>
+    </Page.Content>
+</Page>

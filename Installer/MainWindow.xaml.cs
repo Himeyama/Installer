@@ -27,6 +27,8 @@ namespace Installer
         string LCID { get; set; } = CultureInfo.CurrentCulture.Name;
         string AppTitle { get; set; } = "";
         public string LicenseDocument { get; set; } = "";
+
+        public bool createShortcut { get; set; } = false;
         
 
         public MainWindow()

@@ -21,6 +21,10 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
 
     <Platforms>x64;x86;ARM32;ARM64</Platforms>
+
+    <NeutralLanguage>en-US</NeutralLanguage>
+
+    
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Dialog.xaml" />
