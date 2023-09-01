@@ -96,4 +96,37 @@
   <data name="WhereAppInstall.Text" xml:space="preserve">
       <value>アプリケーションのインストール先を指定してください。</value>
     </data>
+  <data name="CreateShortcut.Content" xml:space="preserve">
+      <value>デスクトップにショートカットを作成する</value>
+    </data>
+  <data name="CreateStartmenuDirectory.Content" xml:space="preserve">
+      <value>スタートメニューディレクトリを作成する</value>
+    </data>
+  <data name="InstallOption.Text" xml:space="preserve">
+      <value>インストールオプション</value>
+    </data>
+  <data name="Install.Content" xml:space="preserve">
+      <value>インストール</value>
+    </data>
+  <data name="Confirm.Text" xml:space="preserve">
+      <value>確認</value>
+    </data>
+  <data name="CreateShortcutLabel.Text" xml:space="preserve">
+      <value>ショートカット作成:</value>
+    </data>
+  <data name="CreateStartmenuDirLabel.Text" xml:space="preserve">
+      <value>スタートメニューディレクトリの作成:</value>
+    </data>
+  <data name="InstallDestinationLabel.Text" xml:space="preserve">
+      <value>インストール先:</value>
+    </data>
+  <data name="Yes.Text" xml:space="preserve">
+      <value>はい</value>
+    </data>
+  <data name="No.Text" xml:space="preserve">
+      <value>いいえ</value>
+    </data>
+  <data name="Installing.Text" xml:space="preserve">
+      <value>インストール中...</value>
+    </data>
 </root>

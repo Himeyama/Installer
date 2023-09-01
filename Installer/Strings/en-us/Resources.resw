@@ -96,4 +96,37 @@
   <data name="WhereAppInstall.Text" xml:space="preserve">
         <value>Where should the application be installed?</value>
       </data>
+  <data name="CreateShortcut.Content" xml:space="preserve">
+        <value>Create a application shortcut in Desktop</value>
+      </data>
+  <data name="CreateStartmenuDirectory.Content" xml:space="preserve">
+        <value>Create a start menu directory</value>
+      </data>
+  <data name="InstallOption.Text" xml:space="preserve">
+        <value>Install option</value>
+      </data>
+  <data name="Install.Content" xml:space="preserve">
+        <value>Install</value>
+      </data>
+  <data name="Confirm.Text" xml:space="preserve">
+        <value>Confirm</value>
+      </data>
+  <data name="CreateShortcutLabel.Text" xml:space="preserve">
+        <value>Create a shortcut:</value>
+      </data>
+  <data name="CreateStartmenuDirLabel.Text" xml:space="preserve">
+        <value>Create a startmenu directory:</value>
+      </data>
+  <data name="InstallDestinationLabel.Text" xml:space="preserve">
+        <value>Install destination:</value>
+      </data>
+  <data name="Yes.Text" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="No.Text" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Installing.Text" xml:space="preserve">
+    <value>Installing...</value>
+  </data>
 </root>

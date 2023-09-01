@@ -28,8 +28,11 @@ namespace Installer
         string AppTitle { get; set; } = "";
         public string LicenseDocument { get; set; } = "";
 
-        public bool createShortcut { get; set; } = false;
-        
+        public string InstallDir { get; set; } = "";
+        public bool? createShortcut { get; set; } = true;
+        public bool? createStartmenuDir { get; set; } = true;
+
+
 
         public MainWindow()
         {
@@ -41,14 +44,17 @@ namespace Installer
             MainFrame.Navigate(typeof(Agreement), this);
 
             License license = null!;
-            using (var sr = new StreamReader("../config/License.json"))
+            using (var sr = new StreamReader("../config/AppConfig.json"))
             {
                 license = JsonSerializer.Deserialize<License>(sr.ReadToEnd())!;
             }
-            if(LCID == "ja-JP"){
+            if (LCID == "ja-JP")
+            {
                 LicenseDocument = license.jaJP.Document!;
                 AppTitle = license.jaJP.ApplicationName!;
-            }else{
+            }
+            else
+            {
                 LicenseDocument = license.enUS.Document!;
                 AppTitle = license.enUS.ApplicationName!;
             }

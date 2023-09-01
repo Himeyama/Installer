@@ -27,6 +27,7 @@ namespace Installer
 
         void NextInstall(object sender, RoutedEventArgs e)
         {
+            mainWindow.InstallDir = InstallDir.Text;
             mainWindow.MainFrame.Navigate(typeof(InstallOption), mainWindow);
         }
 

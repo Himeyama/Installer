@@ -2,46 +2,41 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Navigation;
 
-using Windows.Storage;
-using Windows.Storage.Pickers;
-using WinRT.Interop;
 
 namespace Installer
 {
-    public partial class InstallOption : Page
+    public partial class Confirm : Page
     {
         MainWindow mainWindow = null!;
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (e != null && e.Parameter != null)
+            if (e != null && e.Parameter != null){
                 mainWindow = (MainWindow)e.Parameter;
+                CreateShortcut.Text = (bool)mainWindow.createShortcut! ? Yes.Text : No.Text;
+                CreateStartmenuDirectory.Text = (bool)mainWindow.createStartmenuDir! ? Yes.Text : No.Text;
+                InstallDestination.Text = mainWindow.InstallDir;
+            }
             base.OnNavigatedTo(e);
         }
 
-        public InstallOption()
+        public Confirm()
         {
             InitializeComponent();
-            // InstallDir.Text = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\MyApp";
         }
 
         void NextInstall(object sender, RoutedEventArgs e)
         {
-            mainWindow.MainFrame.Navigate(typeof(InstallOption), mainWindow);
+            mainWindow.MainFrame.Navigate(typeof(CopyFiles), mainWindow);
         }
 
         void BackInstall(object sender, RoutedEventArgs e)
         {
-            mainWindow.MainFrame.Navigate(typeof(WhereInstall), mainWindow);
+            mainWindow.MainFrame.Navigate(typeof(InstallOption), mainWindow);
         }
 
         void Close(object sender, RoutedEventArgs e)
         {
             mainWindow.Close();
-        }
-
-        void CreateShortcutCheck(object sender, RoutedEventArgs e){
-            mainWindow.createShortcut = (bool)CreateShortcut.IsChecked!;
         }
     }
 }
