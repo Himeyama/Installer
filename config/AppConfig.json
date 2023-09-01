@@ -6,5 +6,7 @@
   "enUS": {
     "ApplicationName": "App",
     "Document": "License Agreement"
-  }
+  },
+  "source": "bin",
+  "applicationName": "MyApp"
 }

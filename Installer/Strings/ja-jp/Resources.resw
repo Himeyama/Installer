@@ -54,6 +54,9 @@
   <data name="Exit.Text" xml:space="preserve">
       <value>終了</value>
     </data>
+  <data name="ExitButton.Content" xml:space="preserve">
+      <value>終了</value>
+    </data>
   <data name="File.Title" xml:space="preserve">
       <value>ファイル</value>
     </data>
@@ -128,5 +131,8 @@
     </data>
   <data name="Installing.Text" xml:space="preserve">
       <value>インストール中...</value>
+    </data>
+  <data name="Installed.Text" xml:space="preserve">
+      <value>インストール完了</value>
     </data>
 </root>

@@ -43,15 +43,19 @@
   </resheader>
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0,
-      Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+      Culture=neutral, PublicKeyToken=b77a5c561934e089
+    </value>
   </resheader>
   <data name="About.Text" xml:space="preserve">
-        <value>Installer について</value>
-      </data>
+    <value>Installer について</value>
+  </data>
   <data name="AppTitle.Text" xml:space="preserve">
         <value>Installer</value>
       </data>
   <data name="Exit.Text" xml:space="preserve">
+        <value>Exit</value>
+      </data>
+  <data name="ExitButton.Content" xml:space="preserve">
         <value>Exit</value>
       </data>
   <data name="File.Title" xml:space="preserve">
@@ -128,5 +132,8 @@
   </data>
   <data name="Installing.Text" xml:space="preserve">
     <value>Installing...</value>
+  </data>
+  <data name="Installed.Text" xml:space="preserve">
+    <value>Installed</value>
   </data>
 </root>

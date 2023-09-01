@@ -32,7 +32,7 @@ namespace Installer
         public bool? createShortcut { get; set; } = true;
         public bool? createStartmenuDir { get; set; } = true;
 
-
+        public Config config{ get; set; } = null!;
 
         public MainWindow()
         {
@@ -43,20 +43,19 @@ namespace Installer
 
             MainFrame.Navigate(typeof(Agreement), this);
 
-            License license = null!;
             using (var sr = new StreamReader("../config/AppConfig.json"))
             {
-                license = JsonSerializer.Deserialize<License>(sr.ReadToEnd())!;
+                config = JsonSerializer.Deserialize<Config>(sr.ReadToEnd())!;
             }
             if (LCID == "ja-JP")
             {
-                LicenseDocument = license.jaJP.Document!;
-                AppTitle = license.jaJP.ApplicationName!;
+                LicenseDocument = config.jaJP.Document!;
+                AppTitle = config.jaJP.ApplicationName!;
             }
             else
             {
-                LicenseDocument = license.enUS.Document!;
-                AppTitle = license.enUS.ApplicationName!;
+                LicenseDocument = config.enUS.Document!;
+                AppTitle = config.enUS.ApplicationName!;
             }
         }
 

@@ -14,15 +14,16 @@ namespace Installer
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (e != null && e.Parameter != null)
+            if (e != null && e.Parameter != null){
                 mainWindow = (MainWindow)e.Parameter;
+                InstallDir.Text = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\" + mainWindow.config.applicationName;
+            }
             base.OnNavigatedTo(e);
         }
 
         public WhereInstall()
         {
             InitializeComponent();
-            InstallDir.Text = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\MyApp";
         }
 
         void NextInstall(object sender, RoutedEventArgs e)
