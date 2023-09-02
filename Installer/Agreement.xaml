@@ -12,6 +12,7 @@
             <StackPanel Grid.Row="0">
                 <TextBlock x:Name="LicenseAgreement" x:Uid="LicenseAgreement" Text="LicenseAgreement" FontSize="24" />
                 <TextBlock x:Name="NoExistConfigFile" x:Uid="NoExistConfigFile" Text="Error: The config file does not exist." FontSize="24" Visibility="Collapsed" />
+                <TextBlock x:Name="NoExistSourceDir" x:Uid="NoExistSourceDir" Text="Error: Source directory does Not exist." FontSize="24" Visibility="Collapsed" />
                 <TextBlock x:Name="ReadFollowing" x:Uid="ReadFollowing" Text="Please read the following important information before continuing." TextWrapping="Wrap" />
                 <TextBlock x:Name="ReadLicense" x:Uid="ReadLicense" Text="Please read the following license agreement. You must accept the terms of this agreement before continuing with the installation." TextWrapping="Wrap" />
             </StackPanel>

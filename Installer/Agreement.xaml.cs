@@ -12,13 +12,17 @@ namespace Installer
         {
             if (e != null && e.Parameter != null){
                 mainWindow = (MainWindow)e.Parameter;
-                if(mainWindow.configFileNoExistError){
+                if(mainWindow.configFileNoExistError || !Directory.Exists(mainWindow.config.source)){
                     LicenseAgreement.Visibility = Visibility.Collapsed;
-                    NoExistConfigFile.Visibility = Visibility.Visible;
-                    ReadFollowing.Visibility = Visibility.Collapsed;
                     ReadLicense.Visibility = Visibility.Collapsed;
                     LicenseDoc.Visibility = Visibility.Collapsed;
                     AcceptArea.Visibility = Visibility.Collapsed;
+                    ReadFollowing.Visibility = Visibility.Collapsed;
+                    if(mainWindow.configFileNoExistError){
+                        NoExistConfigFile.Visibility = Visibility.Visible;
+                    }else if(!Directory.Exists(mainWindow.config.source)){
+                        NoExistSourceDir.Visibility = Visibility.Visible;
+                    }
                 }
             }
             base.OnNavigatedTo(e);

@@ -1,10 +1,10 @@
 {
   "jaJP": {
-    "ApplicationName": "アプリ",
+    "ApplicationName": "インストーラー",
     "Document": "利用規約"
   },
   "enUS": {
-    "ApplicationName": "App",
+    "ApplicationName": "Installer",
     "Document": "License Agreement"
   },
   "source": "bin\\x64\\Release\\net7.0-windows10.0.19041.0\\win10-x64",

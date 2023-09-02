@@ -139,6 +139,9 @@
   <data name="NoExistConfigFile.Text" xml:space="preserve">
     <value>Error: The config file does not exist.</value>
   </data>
+  <data name="NoExistSourceDir.Text" xml:space="preserve">
+    <value>Error: Source directory does Not exist.</value>
+  </data>
   <data name="UninstallMsg.Text" xml:space="preserve">
     <value>Do you want to Uninstall the software?</value>
   </data>
