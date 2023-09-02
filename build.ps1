@@ -1,8 +1,9 @@
 rm -r -fo PotableInstaller
 rm -r -fo Installer\bin
 rm -r -fo Installer\obj
-dotnet publish .\Installer\Installer.csproj -c Release -r win10-x64
-cp -r Installer/bin/x64/Release/net7.0-windows10.0.19041.0/win10-x64 PotableInstaller
+# dotnet build .\Installer\Installer.csproj -c Release -r win10-x64
+dotnet publish .\Installer\Installer.csproj -c Release -r win-x64
+cp -r Installer\bin\x64\Release\net7.0-windows10.0.19041.0\win-x64\publish PotableInstaller
 
 rm -r -fo Setup.exe
 rm -r -fo Setup\bin

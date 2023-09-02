@@ -18,12 +18,18 @@
 
     <SelfContained>true</SelfContained>
 
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-
-    <Platforms>x64;x86;ARM32;ARM64</Platforms>
+    <Platforms>x64</Platforms>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
 
     <PublishSingleFile>true</PublishSingleFile>
+
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+
+    <IsPublishable>True</IsPublishable>
+
+    <NeutralLanguage>ja-JP</NeutralLanguage>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Dialog.xaml" />
