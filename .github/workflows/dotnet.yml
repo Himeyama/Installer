@@ -21,7 +21,7 @@ jobs:
     - name: Build PotableInstaller
       run: dotnet publish ./Installer/Installer.csproj -c Release -r win10-x64
     - name: Rename
-      run: Rename-Item -Path ./Installer/bin/x64/Release/net7.0-windows10.0.19041.0/win10-x64 -NewName ./Installer/bin/x64/Release/net7.0-windows10.0.19041.0/PotableInstaller
+      run: Rename-Item -Path ./Installer/bin/x64/Release/net7.0-windows10.0.19041.0/win10-x64 -NewName PotableInstaller
     - name: Build Setup.exe
       run: dotnet publish ./Setup/Setup.csproj -c Release -r win-x64
     - name: Copy
