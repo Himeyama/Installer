@@ -19,7 +19,7 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Build
-      run: dotnet build Installer\Installer.csproj -c Release -r win10-x64
+      run: dotnet build ./Installer/Installer.csproj -c Release -r win10-x64
     - name: Deploy to Build branch
       uses: peaceiris/actions-gh-pages@v3
       with:
