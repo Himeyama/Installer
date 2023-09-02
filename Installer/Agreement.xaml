@@ -10,15 +10,16 @@
     <Page.Content>
         <Grid Margin="16, 8, 16, 16" RowDefinitions="Auto, *, Auto">
             <StackPanel Grid.Row="0">
-                <TextBlock x:Uid="LicenseAgreement" Text="LicenseAgreement" FontSize="24" />
-                <TextBlock x:Uid="ReadFollowing" TextWrapping="Wrap" />
-                <TextBlock x:Uid="ReadLicense" TextWrapping="Wrap" />
+                <TextBlock x:Name="LicenseAgreement" x:Uid="LicenseAgreement" Text="LicenseAgreement" FontSize="24" />
+                <TextBlock x:Name="NoExistConfigFile" x:Uid="NoExistConfigFile" Text="Error: The config file does not exist." FontSize="24" Visibility="Collapsed" />
+                <TextBlock x:Name="ReadFollowing" x:Uid="ReadFollowing" TextWrapping="Wrap" />
+                <TextBlock x:Name="ReadLicense" x:Uid="ReadLicense" TextWrapping="Wrap" />
             </StackPanel>
-            <ScrollViewer Margin="0, 8, 0, 0" Grid.Row="1">
+            <ScrollViewer Margin="0, 8, 0, 0" Grid.Row="1" x:Name="LicenseDoc">
                 <TextBlock TextWrapping="Wrap"
                     Text="{x:Bind mainWindow.LicenseDocument}" />
             </ScrollViewer>
-            <StackPanel Grid.Row="2" Margin="0, 16, 0, 0">
+            <StackPanel Grid.Row="2" Margin="0, 16, 0, 0" x:Name="AcceptArea">
                 <RadioButton GroupName="Accept Group" x:Uid="Accept" x:Name="Accept" />
                 <RadioButton GroupName="Accept Group"
                     IsChecked="true" x:Uid="DontAccept" />

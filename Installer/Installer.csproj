@@ -20,11 +20,7 @@
 
     <ApplicationManifest>app.manifest</ApplicationManifest>
 
-    <Platforms>x64;x86;ARM32;ARM64</Platforms>
-
-    <NeutralLanguage>en-US</NeutralLanguage>
-
-    
+    <Platforms>x64;x86;ARM32;ARM64</Platforms>    
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Dialog.xaml" />
@@ -43,30 +39,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221109.1" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
-    <PackageReference Include="Svg" Version="3.4.4" />
     <Manifest Include="$(ApplicationManifest)" />
+    <PackageReference Include="System.IO.Abstractions" Version="19.2.69" />
+    <PackageReference Include="WindowsShortcutFactory" Version="1.1.0" />
   </ItemGroup>
-
-  <!-- 
-    Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
-    Tools extension to be activated for this project even if the Windows App SDK Nuget
-    package has not yet been restored.
-  -->
-  <!-- <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-    <ProjectCapability Include="Msix" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Dialog.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup> -->
-
-  <!-- 
-    Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
-    Explorer "Package and Publish" context menu entry to be enabled for this project even if 
-    the Windows App SDK Nuget package has not yet been restored.
-  -->
-  <!-- <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-    <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
-  </PropertyGroup> -->
 </Project>

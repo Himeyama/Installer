@@ -10,8 +10,17 @@ namespace Installer
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (e != null && e.Parameter != null)
+            if (e != null && e.Parameter != null){
                 mainWindow = (MainWindow)e.Parameter;
+                if(mainWindow.configFileNoExistError){
+                    LicenseAgreement.Visibility = Visibility.Collapsed;
+                    NoExistConfigFile.Visibility = Visibility.Visible;
+                    ReadFollowing.Visibility = Visibility.Collapsed;
+                    ReadLicense.Visibility = Visibility.Collapsed;
+                    LicenseDoc.Visibility = Visibility.Collapsed;
+                    AcceptArea.Visibility = Visibility.Collapsed;
+                }
+            }
             base.OnNavigatedTo(e);
         }
 

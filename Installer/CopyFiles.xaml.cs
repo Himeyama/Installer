@@ -1,6 +1,10 @@
 ﻿using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Navigation;
+using System.IO.Abstractions;
+using System.Runtime.InteropServices;
+using WindowsShortcutFactory;
+using System.IO;
 
 
 namespace Installer
@@ -15,6 +19,52 @@ namespace Installer
                 mainWindow = (MainWindow)e.Parameter;
                 DeleteDirectory(mainWindow.InstallDir);
                 CopyDirectory(mainWindow.config.source, mainWindow.InstallDir);
+                ExitButton.IsEnabled = true;
+                Installing.Text = Installed.Text;
+
+                if (mainWindow.createShortcut == true)
+                {
+                    string targetPath = $"{mainWindow.InstallDir}\\{mainWindow.config.applicationName}.exe";
+                    string lnkPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\{mainWindow.config.applicationName}.lnk";
+                    using WindowsShortcut shortcut = new()
+                    {
+                        Path = targetPath,
+                        Description = mainWindow.config.description
+                    };
+
+                    try
+                    {
+                        shortcut.Save(lnkPath);
+                    }
+                    catch (Exception ex)
+                    {
+                        File.WriteAllText("InstallError.log", $"create a shortcut in desktop: {ex.Message}");
+                    }
+                }
+
+                if (mainWindow.createStartmenuDir == true)
+                {
+                    string startMenuProgramsPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Microsoft\Windows\Start Menu\Programs";
+                    string appDir = startMenuProgramsPath + "\\" + mainWindow.config.applicationName;
+                    if (!Directory.Exists(appDir))
+                        Directory.CreateDirectory(appDir);
+                    string targetPath = $"{mainWindow.InstallDir}\\{mainWindow.config.applicationName}.exe";
+                    string lnkPath = appDir + $"\\{mainWindow.config.applicationName}.lnk";
+                    using WindowsShortcut shortcut = new()
+                    {
+                        Path = targetPath,
+                        Description = mainWindow.config.description
+                    };
+
+                    try
+                    {
+                        shortcut.Save(lnkPath);
+                    }
+                    catch (Exception ex)
+                    {
+                        File.WriteAllText("InstallError.log", $"create a start menu: {ex.Message}");
+                    }
+                }
             }
             base.OnNavigatedTo(e);
         }
@@ -57,7 +107,7 @@ namespace Installer
             }
         }
 
-        void DeleteDirectory(string targetDir)
+        static public void DeleteDirectory(string targetDir)
         {
             if (!Directory.Exists(targetDir))
             {
@@ -79,9 +129,6 @@ namespace Installer
             }
 
             Directory.Delete(targetDir, false);
-
-            ExitButton.IsEnabled = true;
-            Installing.Text = Installed.Text;
         }
 
         void Close(object sender, RoutedEventArgs e)

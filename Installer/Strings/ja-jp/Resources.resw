@@ -46,93 +46,108 @@
       Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About.Text" xml:space="preserve">
-      <value>インストーラーについて</value>
-    </data>
+  <value>インストーラーについて</value>
+  </data>
   <data name="AppTitle.Text" xml:space="preserve">
-      <value>インストーラー</value>
-    </data>
+  <value>インストーラー</value>
+  </data>
   <data name="Exit.Text" xml:space="preserve">
-      <value>終了</value>
-    </data>
+  <value>終了</value>
+  </data>
   <data name="ExitButton.Content" xml:space="preserve">
-      <value>終了</value>
-    </data>
+  <value>終了</value>
+  </data>
   <data name="File.Title" xml:space="preserve">
-      <value>ファイル</value>
-    </data>
+  <value>ファイル</value>
+  </data>
   <data name="Help.Title" xml:space="preserve">
-      <value>ヘルプ</value>
-    </data>
+  <value>ヘルプ</value>
+  </data>
   <data name="Open.Text" xml:space="preserve">
-      <value>開く...</value>
-    </data>
+  <value>開く...</value>
+  </data>
   <data name="OpenButton.Content" xml:space="preserve">
-      <value>開く</value>
-    </data>
+  <value>開く</value>
+  </data>
   <data name="LicenseAgreement.Text" xml:space="preserve">
-      <value>使用許諾契約書の同意</value>
-    </data>
+  <value>使用許諾契約書の同意</value>
+  </data>
   <data name="Accept.Content" xml:space="preserve">
-      <value>同意する</value>
-    </data>
+  <value>同意する</value>
+  </data>
   <data name="DontAccept.Content" xml:space="preserve">
-      <value>同意しない</value>
-    </data>
+  <value>同意しない</value>
+  </data>
   <data name="Back.Content" xml:space="preserve">
-      <value>&lt; 戻る</value>
-    </data>
+  <value>&lt; 戻る</value>
+  </data>
   <data name="Next.Content" xml:space="preserve">
-      <value>次へ &gt;</value>
-    </data>
+  <value>次へ &gt;</value>
+  </data>
   <data name="Cancel.Content" xml:space="preserve">
-      <value>キャンセル</value>
-    </data>
+  <value>キャンセル</value>
+  </data>
   <data name="ReadFollowing.Text" xml:space="preserve">
-      <value>続行する前に以下の重要な情報をお読みください。</value>
-    </data>
+  <value>続行する前に以下の重要な情報をお読みください。</value>
+  </data>
   <data name="ReadLicense.Text" xml:space="preserve">
-      <value>以下の使用許諾契約をお読みください。インストールを続行するにはこの契約書に同意する必要があります。</value>
-    </data>
+  <value>以下の使用許諾契約をお読みください。インストールを続行するにはこの契約書に同意する必要があります。</value>
+  </data>
   <data name="SelectDestLocation.Text" xml:space="preserve">
-      <value>インストール先の指定</value>
-    </data>
+  <value>インストール先の指定</value>
+  </data>
   <data name="WhereAppInstall.Text" xml:space="preserve">
-      <value>アプリケーションのインストール先を指定してください。</value>
-    </data>
+  <value>アプリケーションのインストール先を指定してください。</value>
+  </data>
   <data name="CreateShortcut.Content" xml:space="preserve">
-      <value>デスクトップにショートカットを作成する</value>
-    </data>
+  <value>デスクトップにショートカットを作成する</value>
+  </data>
   <data name="CreateStartmenuDirectory.Content" xml:space="preserve">
-      <value>スタートメニューディレクトリを作成する</value>
-    </data>
+  <value>スタートメニューディレクトリを作成する</value>
+  </data>
   <data name="InstallOption.Text" xml:space="preserve">
-      <value>インストールオプション</value>
-    </data>
+  <value>インストールオプション</value>
+  </data>
   <data name="Install.Content" xml:space="preserve">
-      <value>インストール</value>
-    </data>
+  <value>インストール</value>
+  </data>
   <data name="Confirm.Text" xml:space="preserve">
-      <value>確認</value>
-    </data>
+  <value>確認</value>
+  </data>
   <data name="CreateShortcutLabel.Text" xml:space="preserve">
-      <value>ショートカット作成:</value>
-    </data>
+  <value>ショートカット作成:</value>
+  </data>
   <data name="CreateStartmenuDirLabel.Text" xml:space="preserve">
-      <value>スタートメニューディレクトリの作成:</value>
-    </data>
+  <value>スタートメニューディレクトリの作成:</value>
+  </data>
   <data name="InstallDestinationLabel.Text" xml:space="preserve">
-      <value>インストール先:</value>
-    </data>
+  <value>インストール先:</value>
+  </data>
   <data name="Yes.Text" xml:space="preserve">
-      <value>はい</value>
-    </data>
+  <value>はい</value>
+  </data>
   <data name="No.Text" xml:space="preserve">
-      <value>いいえ</value>
-    </data>
+  <value>いいえ</value>
+  </data>
   <data name="Installing.Text" xml:space="preserve">
-      <value>インストール中...</value>
-    </data>
+  <value>インストール中...</value>
+  </data>
   <data name="Installed.Text" xml:space="preserve">
-      <value>インストール完了</value>
-    </data>
+  <value>インストール完了</value>
+  </data>
+  <data name="NoExistConfigFile.Text" xml:space="preserve">
+  <value>エラー: 設定ファイルがありません</value>
+  </data>
+  <data name="UninstallMsg.Text" xml:space="preserve">
+  <value>ソフトウェアをアンインストールしますか？</value>
+  </data>
+  <data name="UninstallButton.Content" xml:space="preserve">
+    <value>アンインストール</value>
+  </data>
+  <data name="UninstalledMsg.Text" xml:space="preserve">
+    <value>ソフトウェアはアンインストールされました</value>
+  </data>
+  <data name="CloseButton.Content" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
 </root>

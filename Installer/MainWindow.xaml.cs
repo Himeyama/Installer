@@ -3,7 +3,6 @@ using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Imaging;
-using Svg;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -27,12 +26,11 @@ namespace Installer
         string LCID { get; set; } = CultureInfo.CurrentCulture.Name;
         string AppTitle { get; set; } = "";
         public string LicenseDocument { get; set; } = "";
-
         public string InstallDir { get; set; } = "";
         public bool? createShortcut { get; set; } = true;
         public bool? createStartmenuDir { get; set; } = true;
-
-        public Config config{ get; set; } = null!;
+        public Config config { get; set; } = null!;
+        public bool configFileNoExistError { get; set; } = false;
 
         public MainWindow()
         {
@@ -41,9 +39,15 @@ namespace Installer
             SetTitleBar(AppTitleBar);
             setWindowSize(1200, 800);
 
-            MainFrame.Navigate(typeof(Agreement), this);
+            string configFile = "AppConfig.json";
+            if (!File.Exists(configFile))
+            {
+                configFileNoExistError = true;
+                MainFrame.Navigate(typeof(Agreement), this);
+                return;
+            }
 
-            using (var sr = new StreamReader("../config/AppConfig.json"))
+            using (var sr = new StreamReader(configFile))
             {
                 config = JsonSerializer.Deserialize<Config>(sr.ReadToEnd())!;
             }
@@ -56,6 +60,15 @@ namespace Installer
             {
                 LicenseDocument = config.enUS.Document!;
                 AppTitle = config.enUS.ApplicationName!;
+            }
+
+            InstallDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\" + config.applicationName;
+            if(Directory.Exists(InstallDir)){
+                // アンインストール
+                MainFrame.Navigate(typeof(Uninstall), this);
+            }
+            else{
+                MainFrame.Navigate(typeof(Agreement), this);
             }
         }
 
