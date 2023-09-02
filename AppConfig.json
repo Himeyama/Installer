@@ -1,0 +1,13 @@
+{
+  "jaJP": {
+    "ApplicationName": "インストーラー",
+    "Document": "利用規約"
+  },
+  "enUS": {
+    "ApplicationName": "Installer",
+    "Document": "License Agreement"
+  },
+  "source": "PotableInstaller",
+  "applicationName": "Installer",
+  "description": "description"
+}
