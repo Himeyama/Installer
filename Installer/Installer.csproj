@@ -22,6 +22,8 @@
 
     <Platforms>x64;x86;ARM32;ARM64</Platforms>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
+
+    <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Dialog.xaml" />

@@ -5,6 +5,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>Installer (Package)</ActiveDebugProfile>
+    <_LastSelectedProfileId>C:\Users\minan\source\repos\Installer\Installer\Properties\PublishProfiles\win10-x64.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
     <Page Update="Dialog.xaml">
