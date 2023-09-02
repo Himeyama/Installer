@@ -10,12 +10,12 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+      uses: microsoft/setup-msbuild@v1.0.2
       with:
         dotnet-version: 7.0.x
     - name: Build
