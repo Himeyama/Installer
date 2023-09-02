@@ -21,11 +21,11 @@ jobs:
     - name: Build PotableInstaller
       run: dotnet publish ./Installer/Installer.csproj -c Release -r win10-x64
     - name: Rename
-      run: ren ./Installer/bin/x64/Release/net7.0-windows10.0.19041.0/win10-x64 ./Installer/bin/x64/Release/net7.0-windows10.0.19041.0/PotableInstaller
+      run: Rename-Item -Path ./Installer/bin/x64/Release/net7.0-windows10.0.19041.0/win10-x64 -NewName ./Installer/bin/x64/Release/net7.0-windows10.0.19041.0/PotableInstaller
     - name: Build Setup.exe
       run: dotnet publish ./Setup/Setup.csproj -c Release -r win-x64
     - name: Copy
-      run: copy ./Setup/bin/Release/net7.0/win-x64/publish/Setup.exe ./Installer/bin/x64/Release/net7.0-windows10.0.19041.0/Setup.exe
+      run: Copy-Item -Path ./Setup/bin/Release/net7.0/win-x64/publish/Setup.exe -Destination ./Installer/bin/x64/Release/net7.0-windows10.0.19041.0/Setup.exe
     - name: Deploy to Build branch
       uses: peaceiris/actions-gh-pages@v3
       with:
