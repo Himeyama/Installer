@@ -11,7 +11,7 @@
         <Grid Margin="16, 8, 16, 16" RowDefinitions="Auto, Auto, *, Auto">
             <StackPanel Grid.Row="0">
                 <TextBlock x:Name="Installing" x:Uid="Installing" Text="Installing..." FontSize="24" />
-                <TextBlock x:Name="Installed" x:Uid="Installed" Visibility="Collapsed" />
+                <TextBlock x:Name="Installed" x:Uid="Installed" Text="The software was Installed" Visibility="Collapsed" />
             </StackPanel>
             <ProgressBar Grid.Row="1" Margin="0, 8, 0, 0" x:Name="progressBar" Value="0"
                 Maximum="100" />

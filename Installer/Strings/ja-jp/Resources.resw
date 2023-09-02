@@ -133,7 +133,7 @@
   <value>インストール中...</value>
   </data>
   <data name="Installed.Text" xml:space="preserve">
-  <value>インストール完了</value>
+  <value>ソフトウェアがインストールされました</value>
   </data>
   <data name="NoExistConfigFile.Text" xml:space="preserve">
   <value>エラー: 設定ファイルがありません</value>

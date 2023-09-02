@@ -10,7 +10,7 @@
     <Page.Content>
         <Grid Margin="16, 8, 16, 16" RowDefinitions="Auto, *, Auto">
             <StackPanel Grid.Row="0">
-                <TextBlock x:Name="UninstallMsg" x:Uid="UninstallMsg" Text="Do you want to Uninstall software?" FontSize="24" />
+                <TextBlock x:Name="UninstallMsg" x:Uid="UninstallMsg" Text="Do you want to Uninstall the software?" FontSize="24" />
                 <TextBlock x:Name="UninstalledMsg" x:Uid="UninstalledMsg" Text="The Software was Uninstalled" FontSize="24" Visibility="Collapsed" />
             </StackPanel>
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">

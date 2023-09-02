@@ -134,13 +134,13 @@
     <value>Installing...</value>
   </data>
   <data name="Installed.Text" xml:space="preserve">
-    <value>Installed</value>
+    <value>The software was Installed</value>
   </data>
   <data name="NoExistConfigFile.Text" xml:space="preserve">
     <value>Error: The config file does not exist.</value>
   </data>
   <data name="UninstallMsg.Text" xml:space="preserve">
-    <value>Do you want to Uninstall software?</value>
+    <value>Do you want to Uninstall the software?</value>
   </data>
   <data name="UninstallButton.Content" xml:space="preserve">
     <value>Uninstall</value>

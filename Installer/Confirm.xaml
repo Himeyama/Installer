@@ -10,7 +10,7 @@
     <Page.Content>
         <Grid Margin="16, 8, 16, 16" RowDefinitions="Auto, *, Auto">
             <StackPanel Grid.Row="0">
-                <TextBlock x:Uid="Confirm" FontSize="24" />
+                <TextBlock x:Uid="Confirm" Text="Confirm" FontSize="24" />
             </StackPanel>
             <StackPanel Grid.Row="1" Margin="0, 8, 0, 0">
                 <StackPanel Orientation="Horizontal">
@@ -26,14 +26,14 @@
                     <TextBlock x:Name="InstallDestination" Margin="4, 0, 0, 0" />
                 </StackPanel>
                 <StackPanel Visibility="Collapsed">
-                    <TextBlock x:Uid="Yes" x:Name="Yes" />
-                    <TextBlock x:Uid="No" x:Name="No" />
+                    <TextBlock x:Uid="Yes" x:Name="Yes" Text="Yes" />
+                    <TextBlock x:Uid="No" x:Name="No" Text="No" />
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Row="2" Margin="0, 16, 0, 0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="&lt; Back" x:Uid="Back" Click="BackInstall" />
-                    <Button Content="Install &gt;" Style="{StaticResource AccentButtonStyle}"
+                    <Button Content="Install" Style="{StaticResource AccentButtonStyle}"
                         Margin="8, 0, 0, 0" x:Uid="Install" Click="NextInstall" />
                     <Button Content="Cancel" Margin="8, 0, 0, 0" x:Uid="Cancel" Click="Close" />
                 </StackPanel>
