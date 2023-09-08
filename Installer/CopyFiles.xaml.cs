@@ -17,8 +17,7 @@ namespace Installer
             if (e != null && e.Parameter != null)
             {
                 mainWindow = (MainWindow)e.Parameter;
-                DeleteDirectory(mainWindow.InstallDir);
-                CopyDirectory(mainWindow.config.source, mainWindow.InstallDir);
+                Install();
                 ExitButton.IsEnabled = true;
                 Installing.Text = Installed.Text;
 
@@ -69,20 +68,23 @@ namespace Installer
             base.OnNavigatedTo(e);
         }
 
+        async void Install(){
+            await Task.Run(() => DeleteDirectory(mainWindow.InstallDir));
+            await Task.Run(() => CopyDirectory(mainWindow.config.source, mainWindow.InstallDir));
+        }
+
         public CopyFiles()
         {
             InitializeComponent();
         }
 
-        void CopyDirectory(string sourceDir, string destinationDir)
+        bool CopyDirectory(string sourceDir, string destinationDir)
         {
             DirectoryInfo dir = new(sourceDir);
 
             if (!dir.Exists)
             {
-                throw new DirectoryNotFoundException(
-                    "Source directory does not exist or could not be found: "
-                    + sourceDir);
+                return false;
             }
 
             DirectoryInfo[] dirs = dir.GetDirectories();
@@ -96,8 +98,9 @@ namespace Installer
                 iItem++;
                 file.CopyTo(temppath, false);
                 int progress = iItem / files.Length * 100;
-                progressBar.Value = progress;
-                FileName.Text = temppath + "\n" + FileName.Text;
+                // progressBar.Value = progress;
+                SetProgress(progress);
+                SetProgressFile(temppath);
             }
 
             foreach (DirectoryInfo subdir in dirs)
@@ -105,13 +108,49 @@ namespace Installer
                 string temppath = Path.Combine(destinationDir, subdir.Name);
                 CopyDirectory(subdir.FullName, temppath);
             }
+
+            return true;
         }
 
-        static public void DeleteDirectory(string targetDir)
+        public void SetProgress(int progress)
+        {
+            if (this.DispatcherQueue.HasThreadAccess)
+            {
+                progressBar.Value = progress;
+            }
+            else
+            {
+                bool isQueued = this.DispatcherQueue.TryEnqueue(
+        Microsoft.UI.Dispatching.DispatcherQueuePriority.Normal,
+                    () =>
+                    {
+                        progressBar.Value = progress;
+                    });
+            }
+        }
+
+        public void SetProgressFile(string filename)
+        {
+            if (this.DispatcherQueue.HasThreadAccess)
+            {
+                FileName.Text = filename + "\n" + FileName.Text;
+            }
+            else
+            {
+                bool isQueued = this.DispatcherQueue.TryEnqueue(
+        Microsoft.UI.Dispatching.DispatcherQueuePriority.Normal,
+                    () =>
+                    {
+                        FileName.Text = filename + "\n" + FileName.Text;
+                    });
+            }
+        }
+
+        static public bool DeleteDirectory(string targetDir)
         {
             if (!Directory.Exists(targetDir))
             {
-                return;
+                return false;
             }
 
             string[] files = Directory.GetFiles(targetDir);
@@ -129,6 +168,7 @@ namespace Installer
             }
 
             Directory.Delete(targetDir, false);
+            return true;
         }
 
         void Close(object sender, RoutedEventArgs e)

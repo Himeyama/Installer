@@ -21,19 +21,25 @@ namespace Installer
             InitializeComponent();
         }
 
-        void ExecUninstall(object sender, RoutedEventArgs e)
+        async void ExecUninstall(object sender, RoutedEventArgs e)
+        {
+            await ExecUninstallCore();
+        }
+        
+        async Task<bool> ExecUninstallCore()
         {
             if(mainWindow.config.applicationName == "")
-                return;
+                return false;
         
             string localAppdataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             if(mainWindow.InstallDir != localAppdataPath){
-                CopyFiles.DeleteDirectory(mainWindow.InstallDir);
+                await Task.Run(() => CopyFiles.DeleteDirectory(mainWindow.InstallDir));
             }
 
             string startMenuProgramsPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Microsoft\Windows\Start Menu\Programs";
             string appDir = startMenuProgramsPath + "\\" + mainWindow.config.applicationName;
-            CopyFiles.DeleteDirectory(appDir);
+            
+            await Task.Run(() => CopyFiles.DeleteDirectory(appDir));
 
             string shortcutPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\{mainWindow.config.applicationName}.lnk";
             if (File.Exists(shortcutPath))
@@ -44,6 +50,7 @@ namespace Installer
             CloseButton.Visibility = Visibility.Visible;
             UninstallButton.Visibility = Visibility.Collapsed;
             CancelButton.Visibility = Visibility.Collapsed;
+            return true;
         }
 
         void Close(object sender, RoutedEventArgs e)
